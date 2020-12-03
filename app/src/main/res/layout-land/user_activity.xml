@@ -1,8 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/clRoot"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin"
+        android:text="@string/user_lblName"
+        app:layout_constraintStart_toEndOf="@+id/imgHeader"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/user_button_min_width"
+        android:layout_margin="@dimen/margin"
+        android:hint="@string/user_txtName"
+        android:imeOptions="actionNext"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/lblName"
+        app:layout_constraintTop_toBottomOf="@+id/lblName">
+
+        <requestFocus />
+    </EditText>
+
+
+    <TextView
+        android:id="@+id/lblEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_lblEmail"
+        android:layout_marginTop="@dimen/margin"
+        app:layout_constraintStart_toStartOf="@+id/lblName"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="120dp"
+        android:layout_height="@dimen/user_button_min_width"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:hint="@string/user_txtEmail"
+        android:layout_marginTop="@dimen/margin"
+        app:layout_constraintStart_toStartOf="@+id/lblName"
+        app:layout_constraintTop_toBottomOf="@+id/lblEmail"/>
+
+    <ImageView
+        android:id="@+id/imgEmail"
+        android:layout_width="@dimen/user_button_min_width"
+        android:layout_height="@dimen/user_button_min_width"
+        android:src="@drawable/ic_email_24dp"
+        app:layout_constraintStart_toEndOf="@+id/txtEmail"
+        app:layout_constraintTop_toTopOf="@+id/txtEmail" />
+
+    <TextView
+        android:id="@+id/lblPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_lblPhonenumber"
+        app:layout_constraintStart_toStartOf="@+id/txtPhone"
+        app:layout_constraintTop_toTopOf="@+id/lblEmail" />
+
+    <EditText
+        android:id="@+id/txtPhone"
+        android:layout_width="120dp"
+        android:layout_height="@dimen/user_button_min_width"
+        android:hint="@string/user_txtPhonenumber"
+        android:imeOptions="actionNext"
+        android:inputType="phone"
+        app:layout_constraintEnd_toStartOf="@+id/imgPhone"
+        app:layout_constraintTop_toTopOf="@+id/txtEmail" />
+
+    <ImageView
+        android:id="@+id/imgPhone"
+        android:layout_width="@dimen/user_button_min_width"
+        android:layout_height="@dimen/user_button_min_width"
+        android:layout_marginEnd="@dimen/margin"
+        android:src="@drawable/ic_call_24dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtName"
+        app:layout_constraintTop_toTopOf="@+id/txtEmail" />
+
+    <TextView
+        android:id="@+id/lblAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_lblAddress"
+        app:layout_constraintStart_toStartOf="@+id/lblEmail"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+    <EditText
+        android:id="@+id/txtAddress"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/user_button_min_width"
+        android:layout_margin="@dimen/margin"
+        android:hint="@string/user_txtAddress"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@+id/imgAddress"
+        app:layout_constraintTop_toBottomOf="@+id/lblAddress" />
+
+    <ImageView
+        android:id="@+id/imgAddress"
+        android:layout_width="@dimen/user_button_min_width"
+        android:layout_height="@dimen/user_button_min_width"
+        android:src="@drawable/ic_map_24dp"
+        app:layout_constraintEnd_toEndOf="@+id/imgPhone"
+        app:layout_constraintTop_toTopOf="@+id/txtAddress" />
+
+    <TextView
+        android:id="@+id/lblWeb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_lblWeb"
+        app:layout_constraintStart_toStartOf="@+id/lblAddress"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+
+    <EditText
+        android:id="@+id/txtWeb"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/user_button_min_width"
+        android:layout_margin="@dimen/margin"
+        android:hint="@string/user_txtWeb"
+        android:imeOptions="actionDone"
+        android:inputType="textUri"
+        app:layout_constraintEnd_toStartOf="@+id/imgAddress"
+        app:layout_constraintTop_toBottomOf="@+id/lblWeb" />
+
+    <ImageView
+        android:id="@+id/imgWeb"
+        android:layout_width="@dimen/user_button_min_width"
+        android:layout_height="@dimen/user_button_min_width"
+        android:src="@drawable/ic_web_24dp"
+        app:layout_constraintEnd_toEndOf="@+id/imgPhone"
+        app:layout_constraintTop_toTopOf="@+id/txtWeb" />
 
     <!-- Los iconos tienen una anchura y altura de @dimen/user_button_min_width -->
 
